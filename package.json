@@ -1,0 +1,35 @@
+{
+  "name": "download-in-browser",
+  "version": "0.1.0",
+  "description": "Initiate a file download from your browser's current window",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -t 5000 specs/dl-spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezekg/download-in-browser.git"
+  },
+  "keywords": [
+    "download",
+    "dl",
+    "file",
+    "browser"
+  ],
+  "author": "Ezekiel Gabrielse",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ezekg/download-in-browser/issues"
+  },
+  "homepage": "https://github.com/ezekg/download-in-browser#readme",
+  "dependencies": {
+    "bluebird": "^3.4.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jsdom": "^9.4.1",
+    "jsdom-global": "^2.0.0",
+    "mocha": "^2.5.3",
+    "sinon": "^1.17.4"
+  }
+}
