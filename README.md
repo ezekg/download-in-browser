@@ -13,8 +13,8 @@ npm install download-in-browser
 ## Usage
 
 ### Download
-Download a file by `url`. Download will response with a `Promise` that will resolve
-with the following properties from the `XMLHttpRequest` object,
+Download a file by `url`. Download will respond with a `Promise` that will be resolved
+or rejected with the following properties from the `XMLHttpRequest` object,
 ```javascript
 {
   status: xhr.status,
