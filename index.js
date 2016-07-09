@@ -3,20 +3,22 @@
 const Promise = require("bluebird")
 
 /**
- * @param {Str} url
+ * @param {Str} fileUrl
+ * @param {Str} fileName
  *
  * @return {Promise}
  */
-module.exports = (url) => {
+module.exports = (fileUrl, fileName) => {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest()
 
-    const initiateBrowserDownload = (url) => {
+    const initiateBrowserDownload = () => {
       const a = document.createElement("a")
       document.body.appendChild(a)
 
+      a.setAttribute("download", fileName || true)
       a.setAttribute("style", "display: none;")
-      a.setAttribute("href", url)
+      a.setAttribute("href", fileUrl)
       a.click()
 
       document.body.removeChild(a)
@@ -28,7 +30,7 @@ module.exports = (url) => {
       }
 
       if (xhr.status >= 200 && xhr.status < 400) {
-        initiateBrowserDownload(url)
+        initiateBrowserDownload()
         resolve({
           status: xhr.status,
           statusText: xhr.statusText
@@ -43,7 +45,7 @@ module.exports = (url) => {
       xhr.abort() // We just need the headers
     }
 
-    xhr.open("GET", url)
+    xhr.open("GET", fileUrl)
     xhr.send()
   })
 }

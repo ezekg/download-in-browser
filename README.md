@@ -13,8 +13,8 @@ npm install download-in-browser
 ## Usage
 
 ### Download
-Download a file by `url`. It will make an `XMLHttpRequest` `GET` request in order
-to grab the response headers from the `url`.
+Download a file by URL, with an optional `fileName` param. It will make an `XMLHttpRequest`
+`GET` request in order to grab the response headers from the URL.
 
 After receiving the headers, the `download` function will abort the request (so
 as to not begin streaming the download) and respond with a `Promise` that will
@@ -34,7 +34,7 @@ Example,
 ```javascript
 const download = require("download-in-browser")
 
-download("https://github.com/ezekg/download-in-browser/blob/master/README.md")
+download("https://github.com/ezekg/download-in-browser/blob/master/README.md", "readme.md")
   .then((data) => console.log(`${data.statusText}: Download has started...`))
   .catch((err) => console.log(`${err.statusText}: Download failed to start`))
 ```

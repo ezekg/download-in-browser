@@ -1,6 +1,6 @@
 {
   "name": "download-in-browser",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Initiate a file download from your browser's current window",
   "main": "index.js",
   "scripts": {
