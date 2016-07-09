@@ -31,16 +31,12 @@ module.exports = (url) => {
         initiateBrowserDownload(url)
         resolve({
           status: xhr.status,
-          statusText: xhr.statusText,
-          response: xhr.response,
-          responseText: xhr.responseText
+          statusText: xhr.statusText
         })
       } else {
         reject({
           status: xhr.status,
-          statusText: xhr.statusText,
-          response: xhr.response,
-          responseText: xhr.responseText
+          statusText: xhr.statusText
         })
       }
 
