@@ -24,6 +24,12 @@ module.exports = (fileUrl, fileName) => {
       document.body.removeChild(a)
     }
 
+    const respond = () => ({
+      status: xhr.status,
+      statusText: xhr.statusText
+    })
+
+    xhr.onerror = () => reject(respond())
     xhr.onreadystatechange = () => {
       if (xhr.readyState !== 2) { // XMLHttpRequest.HEADERS_RECEIVED
         return
@@ -31,15 +37,9 @@ module.exports = (fileUrl, fileName) => {
 
       if (xhr.status >= 200 && xhr.status < 400) {
         initiateBrowserDownload()
-        resolve({
-          status: xhr.status,
-          statusText: xhr.statusText
-        })
+        resolve(respond())
       } else {
-        reject({
-          status: xhr.status,
-          statusText: xhr.statusText
-        })
+        reject(respond())
       }
 
       xhr.abort() // We just need the headers

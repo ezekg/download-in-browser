@@ -44,15 +44,27 @@ describe("download", () => {
     } catch (e) {}
   })
 
-  it("should report a failed download", (done) => {
+  it("should report a rejected download", (done) => {
     download("/bad-file.txt")
       .catch((err) => {
-        chai.expect(err).to.not.equal(null)
+        chai.expect(err.status).to.equal(401)
         done()
       })
 
     try {
       request.respond(401, null, null)
+    } catch (e) {}
+  })
+
+  it("should report a failed download", (done) => {
+    download("/bad-file.txt")
+      .catch((err) => {
+        chai.expect(err.status).to.equal(500)
+        done()
+      })
+
+    try {
+      request.respond(500, { "Content-Type": "text/plain" }, "Internal server error")
     } catch (e) {}
   })
 
