@@ -22,10 +22,8 @@
     "url": "https://github.com/ezekg/download-in-browser/issues"
   },
   "homepage": "https://github.com/ezekg/download-in-browser#readme",
-  "dependencies": {
-    "bluebird": "^3.4.1"
-  },
   "devDependencies": {
+    
     "chai": "^3.5.0",
     "jsdom": "^9.4.1",
     "jsdom-global": "^2.0.0",
