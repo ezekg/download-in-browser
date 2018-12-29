@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/ezekg/download-in-browser#readme",
   "devDependencies": {
-    
     "chai": "^3.5.0",
     "jsdom": "^9.4.1",
     "jsdom-global": "^2.0.0",
