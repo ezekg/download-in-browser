@@ -1,7 +1,5 @@
 "use strict"
 
-const Promise = require("bluebird")
-
 /**
  * @param {Str} fileUrl
  * @param {Str} fileName
